@@ -1,5 +1,4 @@
 # Jogo-da-Forca
-# Jogo-da-Forca
 
 <h1> Projeto - Jogo da Forca </h1>
 
