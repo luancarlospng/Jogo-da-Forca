@@ -28,13 +28,18 @@ const categorias = {
     frutas: ['uva','limão','laranja','melancia','coco','maçã','morango','mamão']
 }
 
+
 function arrayCategorias(){
     return Object.keys(categorias);
 };
 
+function indiceNumAleatorio(max){
+    return Math.floor(Math.random() * max);
+}
+
 function categoriasAleatorias(){
     const arrayDeCategorias = arrayCategorias();
-    let indiceAleatorio = Math.floor(Math.random() * arrayDeCategorias.length);
+    let indiceAleatorio = indiceNumAleatorio(arrayDeCategorias.length);
     
     return arrayDeCategorias[indiceAleatorio];
 };
@@ -43,6 +48,25 @@ function exibeCategoria(){
     categoria.innerHTML = categoriasAleatorias();
 }
 
+function definePalavraProposta(){
+    let arrayPalavras = categorias[categoria.innerHTML];
+    let indicePalavra = indiceNumAleatorio(arrayPalavras.length);
+    palavraProposta = arrayPalavras[indicePalavra];
+    ocultaPalavraProposta();
+};
+
+
+function ocultaPalavraProposta(){
+    let palavraOcultada = '';
+    for(let i = 0; i < palavraProposta.length; i++){
+        palavraOcultada += '-';
+    };
+    exibePalavraInterface(palavraOcultada);
+};
+
+function exibePalavraInterface(palavra){
+    palavraInterface.innerHTML = palavra;
+}
 
 /*
 Recebe o evento do teclado e passa apenas o valor da letra para a função tentativa
@@ -90,6 +114,7 @@ function iniciaJogo(){
     letrasErradasArray = [];
     letrasErradas.innerHTML = "Letras erradas: ";
     exibeCategoria();
+    definePalavraProposta();
     window.addEventListener("keypress", retornaLetra);
 }
 
