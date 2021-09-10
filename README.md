@@ -13,5 +13,8 @@ Jogue agora mesmo: <a href="https://luanferreira93.github.io/Jogo-da-Forca/"> Cl
 <li>JavaScript</li>
 </ul>
 <hr>
-Prévia:
-![git-img](img-1.png)
+imagens:
+<p align="center">
+  <img src="./git-img/img-1.png" width="800">
+</p>
+  
