@@ -25,7 +25,7 @@ const categorias = {
     animais: ['leão','sapo','gato','cachorro','tubarão','rato','gavião'],
     cores: ['azul','verde','rosa','cinza','vermelho','roxo','violeta'],
     profissoes: ['advogado','médico','programador','professor','policial','bombeiro'],
-    frutas: ['uva','limão','laranja','melancia','coco','maçã','morango','mamão']
+    frutas: ['uva','limão','laranja','melancia','coco','maçã','morango','mamão','banana']
 }
 
 
@@ -52,6 +52,7 @@ function definePalavraProposta(){
     let arrayPalavras = categorias[categoria.innerHTML];
     let indicePalavra = indiceNumAleatorio(arrayPalavras.length);
     palavraProposta = arrayPalavras[indicePalavra];
+    console.log(palavraProposta);
     ocultaPalavraProposta();
 };
 
@@ -66,7 +67,30 @@ function ocultaPalavraProposta(){
 
 function exibePalavraInterface(palavra){
     palavraInterface.innerHTML = palavra;
-}
+};
+
+function tentativa(letra){
+    if(palavraProposta.includes(letra)){
+        atualizaPalavraInterface(letra);
+    }else{
+
+    };
+};
+
+function atualizaPalavraInterface(letra){
+    let palavraAux = '';
+    for(let i =0; i < palavraProposta.length ; i++){
+        if(palavraProposta[i] === letra){
+            palavraAux += letra
+        }else if(palavraInterface.innerHTML[i] != '-'){
+            palavraAux += palavraInterface.innerHTML[i];
+        }
+        else{
+            palavraAux += '-';
+        };
+    };
+    exibePalavraInterface(palavraAux);
+};
 
 /*
 Recebe o evento do teclado e passa apenas o valor da letra para a função tentativa
