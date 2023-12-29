@@ -2,7 +2,7 @@
 
 <h1> Projeto - Jogo da Forca </h1>
 
-Jogue agora mesmo: <a href="https://luanferreira93.github.io/Jogo-da-Forca/" target="_blank"> Clique aqui para jogar</a>
+Jogue agora mesmo: <a href="https://luancarlospng.github.io/Jogo-da-Forca/" target="_blank"> Clique aqui para jogar</a>
 
 <h3> tecnologias utilizadas <h3>
 <hr>
